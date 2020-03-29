@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.example.btl.R;
 import com.example.btl.model.DoAn;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,8 +44,10 @@ public class DoanAdapter extends ArrayAdapter<DoAn> {
             ImageView imgDoan = convertView.findViewById(R.id.ivAnhDoan);
 
             tenDoan.setText(doAn.getTenDoAn());
-            giaDoan.setText(doAn.getGiaDoAn());
+            DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+            giaDoan.setText(decimalFormat.format(doAn.getGiaDoAn())+" Đ");
             Glide.with(this.ct).load(doAn.getLinkAnh()).into(imgDoan);
+
         }
         return convertView;
     }

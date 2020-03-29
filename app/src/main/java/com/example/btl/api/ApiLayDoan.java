@@ -22,7 +22,7 @@ public class ApiLayDoan extends AsyncTask<Void,Void,Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url("https://api.myjson.com/bins/kp554").build();
+        Request request = new Request.Builder().url("http://appdoan.000webhostapp.com/datafood.php").build();
         data = null;
         try {
             Response response = client.newCall(request).execute();
